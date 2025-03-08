@@ -23,9 +23,8 @@ function playerTurn(playerChoice) {
 }
 let playerScore = 0;
 let npcScore = 0;
-let result
+let result;
 function check(playerChoice, npcChoice) {
-
   if (
     (playerChoice === 0 && npcChoice === 1) ||
     (playerChoice === 1 && npcChoice === 2) ||
@@ -33,25 +32,23 @@ function check(playerChoice, npcChoice) {
   ) {
     document.getElementById("you").innerHTML = `You:${++playerScore}`;
     winAudio.play();
-     result="You"
-     document.getElementById("result").innerHTML = result;
-     document.getElementById("result").style.color ="green";
-
+    result = "You";
+    document.getElementById("result").innerHTML = result;
+    document.getElementById("result").style.color = "green";
   } else if (
     (playerChoice === 0 && npcChoice === 2) ||
     (playerChoice === 1 && npcChoice === 0) ||
     (playerChoice === 2 && npcChoice === 1)
   ) {
-    document.getElementById("pc").innerHTML = `You:${++npcScore}`;
+    document.getElementById("pc").innerHTML = `NPC:${++npcScore}`;
     loseAudio.play();
-     result="NPC"
-     document.getElementById("result").innerHTML = result;
-     document.getElementById("result").style.color =" red";
-
-  } else if (playerChoice === npcChoice) {
-     result="draw"
+    result = "NPC";
     document.getElementById("result").innerHTML = result;
-    document.getElementById("result").style.color ="blue";
+    document.getElementById("result").style.color = " red";
+  } else if (playerChoice === npcChoice) {
+    result = "draw";
+    document.getElementById("result").innerHTML = result;
+    document.getElementById("result").style.color = "blue";
 
     drawAudio.play();
   }
